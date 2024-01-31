@@ -1,120 +1,143 @@
-  <!DOCTYPE html>
-  <html lang="en-us" /> 
-  <head>
-  <meta charset="utf-8" />
-  <title>Suvan Agarwal</title>
-  <style>
+<!DOCTYPE html>
+<html lang="en-us" /> 
+<head>
+<meta charset="utf-8" content="width=device-width, initial-scale=1"/>
+<title>Suvan Agarwal</title>
+<style>
 
-  .sidenav {
-    height: 100%;
-    width: 20%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: darkblue;
-    overflow-x: hidden;
-    padding-top: 30px;
-  }
+body {
+  background-color: #FAF9F6;
+}
 
-  .sidenav a {
-    padding: 16px;
-    font-size: 2em;
-    color: white;
-    display: block;
-  }
+.sidenav {
+  width: 190px;
+  position: fixed;
+  z-index: 1;
+  top: 50px;
+  left: 50px;
+  background: darkblue;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
 
-  .grid-container {
-    width: 100%;
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto auto auto;
-    border: 5px solid gray;
-  }
-  .grid-item {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
-    background-color: white;
-  }
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 28px;
+  color: white;
+  display: block;
+}
 
-  figure {
-      display: inline-block;
-  }
+.sidenav h1 {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 38px;
+  color: white;
+  display: block;
+}
 
-  figure figcaption {
-      text-align: center;
-  }
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-  h1 {
-    font-size: 48px;
-  }
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto auto;
+  border: 5px solid gray;
+}
+.grid-item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: white;
+}
 
-  h3 {
-    font-size: 24px;
-  }
+figure {
+  display: inline-block;
+}
 
-  p {
-    font-size: 16px;
-  }
+figure figcaption {
+  text-align: center;
+}
 
-  section {
-    margin-left: 20%; /* Same as the width of the sidenav */
-    padding: 2%;
-    /* ! Everything below is needed ! */
-    display: none;
-    position: absolute;
-    top: 0;
-    min-height: 100vh;
-    width: 74%;
-    background: white;
-  }
+h1 {
+  font-size: 48px;
+}
 
-  section:target { /* Show section */
-    display: block;
-  }
+h3 {
+  font-size: 24px;
+}
 
-  section#homepage { /* Show #home by default */
-    display: block;
-  }
+p {
+  font-size: 16px;
+}
 
-  /* Set styling options for the columns */
-      .column {
-      float: left;
-      }
+section {
+  margin-left: 240px; /* Same as the width of the sidenav */
+  padding: 50px;
+  /* ! Everything below is needed ! */
+  display: none;
+  position: absolute;
+  top: 0;
+  min-height: 100vh;
+  width: 74%;
+  background: #FAF9F6;
+}
 
-      /* Set width length for the left, right columns */
-      .left {
-      width: 30%;
-      }
-      
-      .right {
-      width: 70%;
-      }
-      
-  th, td {
-    padding: 15px;
-    text-align: left;
-    vertical-align: top;
-  }
+section:target { /* Show section */
+  display: block;
+}
 
-  </style>
-  </head>
+section#homepage { /* Show #home by default */
+  display: block;
+}
+
+/* Set styling options for the columns */
+.column {
+  float: left;
+}
+
+/* Set width length for the left, right columns */
+.left {
+  width: 30%;
+}
+
+.right {
+  width: 70%;
+}
+
+table {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: top;
+}
+
+</style>
+</head>
   <body>
 
 
   <!-- Side navigation -->
   <div class="sidenav">
-    <a href="#homepage">Homepage</a>
+    <h1>Suvan Agarwal</h1>
+    <a href="#homepage">Home</a>
     <a href="#biography">Biography</a>
     <a href="#videos">Videos</a>
     <a href="#photos">Photos</a>
-    <a href="#resume">Resume</a>
+    <a href="#profile">Profile</a>
   </div>
-  <!-- Homepage page content -->
+  
+  <!-- Contact page content -->
   <main>
   <section id="homepage">
     <div class="row">
@@ -135,49 +158,59 @@
               <h1>Suvan Agarwal, Classical Guitarist</h1>
               <p>If you have any enquiries please do not hesitate to contact me through the following email address.
               <br>
-              email: <a href = "mailto: suvanagarwalguitar@gmail.com"> suvanagarwalguitar@gmail.com</a></p>
+              email: suvanagarwalguitar[@]gmail.com</p>
           </div>
       </div>
   </section>
 
   <section id="biography">
   <!-- Biography page content -->
-    <h1>Suvan Agarwal's Biography</h1>
+    <h1>Biography</h1>
     <p>Last updated on January 30, 2024</p>
-    <p>Suvan Agarwal is a young American guitarist with international experience. He has won numerous prizes at the Louisville Guitar Competition, Guitar Foundation of America International Ensemble Competition, and Tuesday Musical competition, where in addition to first prize in the guitar category, he won the audience prize in the final round open to winners from all instrument categories. He has performed in both the United States and Japan.
+    <p>Suvan Agarwal (2001) is a young American guitarist with international experience. He has won numerous prizes at the Louisville Guitar Competition, Guitar Foundation of America International Ensemble Competition, and Tuesday Musical competition, where in addition to first prize in the guitar category, he won the audience prize in the final round open to winners from all instrument categories. He has performed in both the United States and Japan.
     <br>
     <br>
-    Suvan started playing guitar at the age of five taught by Frank Longay, creator of the Suzuki guitar method. After Frank's passing, he studied guitar under the guidance of Alexandra Viloteau (née Iranfar), and at the end of high school made the decision to enter Oberlin College and Conservatory's double degree program to study physics and guitar performance. Suvan now studies with Stephen Aron and will graduate with degrees in guitar performance and physics in Spring 2024. He has participated in masterclasses with David Russell, Leo Brouwer, and Raphaella Smits, among many others. He has also taken lessons with Gentaro Takada and Thomas Viloteau. Suvan will enter the Royal Conservatoire of Scotland starting in Fall 2024, where he will study under Matthew McAllister and Allan Neave. He is the recipient of a full ride post-graduate scholarship awarded by the Associated Board of the Royal Schools of Music (ABRSM).
+    Suvan started playing guitar at the age of five taught by Frank Longay, creator of the Suzuki guitar method. After Frank's passing, he studied guitar under the guidance of Alexandra Viloteau (née Iranfar), and at the end of high school made the decision to enter Oberlin College and Conservatory's double degree program. Suvan now studies with Stephen Aron and will graduate with degrees in guitar performance and physics in Spring 2024. He has participated in masterclasses with David Russell, Leo Brouwer, and Raphaella Smits, among many others. He has also taken lessons with Gentaro Takada and Thomas Viloteau. Suvan will enter the Royal Conservatoire of Scotland starting in Fall 2024, where he will study under Matthew McAllister and Allan Neave. He is the recipient of a full ride post-graduate scholarship awarded by the Associated Board of the Royal Schools of Music (ABRSM).
   <br>
   <br>
-  In addition to his musical activities, Suvan was also a recipient of a National Science Foundation scholarship to conduct geophysics research at the University of Hawaii in 2022, as well as a scholarship from the Friends of the University of Tokyo (FUTI) foundation to conduct geophysics research at the UTokyo Earthquake Research Institute (東京大学地震研究所) in 2023. He studied abroad at Waseda University（早稲田大学）in 2022, and was the first Oberlin College student ever to receive the Bridging Scholarship from the United States-Japan Bridging Foundation. Suvan was born in Japan and speaks both English and Japanese. His mother is Japanese-American and his father is Indian. He grew up in Sunnyvale, California.</p>
+  In addition to his musical activities, Suvan was also a recipient of a National Science Foundation scholarship to conduct geophysics research at the University of Hawaii in 2022, as well as a scholarship from the Friends of the University of Tokyo (FUTI) foundation to conduct geophysics research at the UTokyo Earthquake Research Institute（東京大学地震研究所）in 2023. He studied abroad at Waseda University（早稲田大学）in 2022, and was the first Oberlin College student ever to receive the Bridging Scholarship from the United States-Japan Bridging Foundation. Suvan was born in Japan and speaks both English and Japanese. His mother is Japanese-American and his father is Indian. He grew up in Sunnyvale, California.</p>
   </section>
 
   <section id="videos">
   <!-- Videos page content -->
-  <h1>Suvan Agarwal's Videos</h1>
+  <h1>Videos</h1>
   <p>Here are some videos for recommended listening. You can also access my whole collection at <a href="https://www.youtube.com/@penguintube9223" target="_blank">my Youtube Channel</a></p>
   <figure>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/Rtj6hjkyGYg?si=a0RfBZuYUOtwNSJT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <figcaption>Suvan Agarwal plays Concierto de Aranjuez: I. Allegro con Spirito<br> at the Oberlin Fall 2023 Guitar Ensemble Recital on November 19, 2023</figcaption>
+  <figcaption>Concierto de Aranjuez: I. Allegro con Spirito<br> performed on November 19, 2023</figcaption>
   </figure>
 
   <figure>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/SbhaH29Pafo?si=_ATjCT2D-FE25R1_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <figcaption>Suvan Agarwal plays Bach's D minor Violin Partita and Ponce's Sonata <br> Romantica at the Oberlin Fall 2023 Guitar Studio Recital on December 6, 2023</figcaption>
+  <figcaption>Bach's D minor Violin Partita: I. Allemande (0:00), IV. Gigue (3:39)</a> <br>Ponce's Sonata Romantica: II. Andante (7:30), IV: Allegro (12:43) <br>performed on December 6, 2023</figcaption>
   </figure>
 
   <figure>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/6KK96-oQuO8?si=g9LLAaPu0eaD299Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <figcaption>Suvan Agarwal plays his own arrangement of Andante from Bach's D minor<br> keyboard sonata (BWV 964) at his Senior Recital on April 20, 2023</figcaption>
+  <figcaption>Bach's D minor keyboard sonata (BWV 964): II. Andante (arr Suvan Agarwal) <br>performed on April 20, 2023</figcaption>
+  </figure>
+  
+  <figure>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/LfxkgAUA3Rs?si=fzAoQJfihV5m2Rsu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <figcaption>Bach's Wachet Auf, Ruft uns die Stimme (BWV 645), arr David Russell <br>performed on April 20, 2023</figcaption>
+  </figure>1
+  
+  <figure>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/W4GqO-e9FFQ?si=_MJjfi0j4t8YV7ij" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <figcaption>Sonata K.27 by Scarlatti (arr Eliot fisk) <br>performed on April 20, 2023</figcaption>
   </figure>
 
   </section>
 
   <section id="photos">
   <!-- Photos page content -->
-  <h1>Suvan Agarwal's Photos</h1>
-  <p>Here are some photos for use in programs, articles, promotional posters, and other relevant materials. Before using these photos, please contact Suvan via the email address listed on the <a href="#homepage">homepage</a> of this website. To download a photo, click on it to open the image in a new tab, then right click and save image. 
+  <h1>Photos</h1>
+  <p>Here are some photos for use in programs, articles, promotional posters, and other relevant materials. To download a photo, click on it to open the image in a new tab, then right click and save image. 
   <div class="grid-container">
     <div class="grid-item">
     <figure>
@@ -208,15 +241,24 @@
     <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/playing-guitar-warner-hall.jpg" target="_blank">
       <img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/playing-guitar-warner-hall.jpg" alt="Picture of Suvan Agarwal playing his guitar in Warner Hall" width="90%">
     </a>
-    <figcaption>Photo by Stephen Aron<br>2500x1875 pixels</figcaption>
+    <figcaption>2500x1875 pixels</figcaption>
     </figure>
     </div>
+    <div class="grid-item">
+    <figure>
+    <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/warner-hall-aranjuez-performance.jpg" target="_blank">
+      <img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/warner-hall-aranjuez-performance.jpg" alt="Picture of Suvan Agarwal playing his guitar with piano accompaniment in Warner Hall" width="90%">
+    </a>
+    <figcaption>1500x1500 pixels</figcaption>
+    </figure>
+    </div>
+    
   </div>
   </section>
 
-  <section id="resume">
-  <!-- Resume page content -->
-    <h1>Suvan Agarwal's Resume</h1>
+  <section id="profile">
+  <!-- CV page content -->
+    <h1>Profile</h1>
     <table>
     <tr>
       <th>Name</th>
@@ -224,7 +266,7 @@
     </tr>
     <tr>
       <th>Age</td>
-      <td>22 years old, born in 2001</td>
+      <td>born in 2001</td>
     </tr>
     <tr>
       <th>Hometown</td>
@@ -234,43 +276,112 @@
       <th>Languages</th>
       <td>English, Japanese</td>
     </tr>
-    <tr>
-      <th>Education</th>
-      <td>
-        <ul>
-          <li>Royal Conservatoire of Scotland: Masters in Music (MMus) in Guitar, expected July 2026</li>
-          <li>Oberlin Conservatory: Bachelors Degree (BM) in Classical Guitar Performance, expected May 2024</li>
-          <li>Oberlin College: Bachelors Degree (BA) in Physics, expected May 2024</li>
-          <li>Homestead High School: High School Diploma, 2019</li>
-        </ul>
-      </td>
-    </tr>
+    </table>
+    
+    <table>
+      <tr>
+        <th>Education</th>
+        <td>Royal Conservatoire of Scotland <br>(incoming Fall 2024)</td>
+        <td>Masters in Music (MMus) in Guitar, expected July 2026</td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>Oberlin Conservatory <br>(currently enrolled)</td>
+        <td>Bachelors Degree (BM) in Classical Guitar Performance, expected May 2024</td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>Oberlin College <br>(currently enrolled)</td>
+        <td>Bachelors Degree (BA) in Physics, expected May 2024</td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>Homestead High School</td>
+       <td>High School Diploma, 2019</td>
+      </tr>
+    </table>
+    
+    <table>
     <tr>
       <th>Awards and Scholarships</th>
+      <td>2023</td>
       <td>
         <ul>
-          <li>2023 Associated Board of the Royal Schools of Music (ABRSM) post-graduate scholarship to study at the Royal Conservatoire of Scotland</li>
-          <li>2023 Louisville Collegiate Guitar Competition, 3rd prize</li>
-          <li>2023 Friends of University of Tokyo, Inc. (FUTI) scholarship to participate in the University of Tokyo Research Internship Program (UTRIP) at the UTokyo Earthquake Research Institute (ERI)</li>
-          <li>2022 The Bridging Scholarship awarded by the United States-Japan Bridging Foundation for study abroad at Waseda University</li>
-          <li>2022 USA National Science Foundation scholarship to conduct geophysics research at the Hawaii Geophysics Institute at the University of Hawaii at Manoa</li>
-          <li>2021 John M. Ream Jr. DDS People’s Choice Award, awarded to the audience choice at the final round of the Tuesday Musical All-Ohio Scholarship Competition, open to all instruments.</li>
-          <li>2021 Margaret Watts Hunter Scholarship for Classical Guitar, awarded to the winner of the Tuesday Musical All-Ohio Scholarship Competition, guitar division</li>
-          <li>2018 Guitar Foundation of America International Youth Ensemble Competition, 1st prize</li>
+          <li>Associated Board of the Royal Schools of Music (ABRSM) post-graduate scholarship to study at the Royal Conservatoire of Scotland</li>
+          <li>Louisville Collegiate Guitar Competition, 3rd prize</li>
+          <li>Friends of University of Tokyo, Inc. (FUTI) scholarship to participate in the University of Tokyo Research Internship Program (UTRIP) at the UTokyo Earthquake Research Institute (ERI)</li>
         </ul>
       </td>
     </tr>
+    
     <tr>
-      <th>Work Experience</th>
+      <th></th>
+      <td>2022</td>
       <td>
         <ul>
-          <li>March 2020-present: Help Desk Technician, Oberlin College Computer and Information Technology (CIT) Department</li>
-          <li>June 2023-August 2023: Research Intern, Shingo Watada Lab, University of Tokyo Earthquake Research Institute (ERI)</li>
-          <li>May 2022-July 2022: Research Intern, Shiv Sharma Lab, Hawaii Institute of Geophysics at University of Hawaii at Manoa</li>
-          <li>January 2021-July 2021: Research Assistant, Stephen Fitzgerald Lab, Oberlin College Department of Physics</li>
-          <li>April 2015-July 2019: Assistant Swim Coach, Fairbrae Manta Rays Swim Team</li>
+          <li>The Bridging Scholarship awarded by the United States-Japan Bridging Foundation for study abroad at Waseda University</li>
+          <li>USA National Science Foundation scholarship to conduct geophysics research at the Hawaii Geophysics Institute at the University of Hawaii at Manoa</li>
         </ul>
       </td>
+    </tr>
+    
+    <tr>
+      <th></th>
+      <td>2021</td>
+      <td>
+        <ul>
+          <li>John M. Ream Jr. DDS People’s Choice Award, awarded to the audience choice at the final round of the Tuesday Musical All-Ohio Scholarship Competition, open to all instruments.</li>
+          <li>Margaret Watts Hunter Scholarship for Classical Guitar, awarded to the winner of the Tuesday Musical All-Ohio Scholarship Competition, guitar division</li>
+        </ul>
+      </td>
+    </tr>
+    
+    <tr>
+      <th></th>
+      <td>2018</td>
+      <td>
+        <ul>
+          <li>Guitar Foundation of America International Youth Ensemble Competition, 1st prize</li>
+        </ul>
+      </td>
+    </tr>
+    </table>
+    
+    <table>
+    
+    <tr>
+      <th>Additional Experience</th>
+      <td>March 2020-present</td>
+      <td>Oberlin College Computer and Information Technology (CIT) Department</td>
+      <td>Help Desk Technician</td>
+    </tr>
+    
+    <tr>
+      <th></th>
+      <td>June 2023-August 2023</td>
+      <td>University of Tokyo Earthquake Research Institute (ERI), Shingo Watada Lab</td>
+      <td>Research Intern</td>
+    </tr>
+    
+    <tr>
+      <th></th>
+      <td>May 2022-July 2022</td>
+      <td>Hawaii Institute of Geophysics at University of Hawaii at Manoa, Shiv Sharma Lab</td>
+      <td>Research Intern</td>
+    </tr>
+    
+    <tr>
+      <th></th>
+      <td>January 2021-July 2021</td>
+      <td>Oberlin College Department of Physics</td>
+      <td>Research Assistant</td>
+    </tr>
+    
+    <tr>
+      <th></th>
+      <td>April 2015-July 2019</td>
+      <td>Fairbrae Manta Rays Swim Team</td>
+      <td>Assistant Swim Coach</td>
     </tr>
   </table>
 
