@@ -13,8 +13,8 @@ body {
 .sidenav {
   width: 190px;
   position: fixed;
-  top: 50px;
-  left: 50px;
+  top: 30px;
+  left: 30px;
   z-index: 1;
   background-color: Maroon;
   overflow-x: hidden;
@@ -47,8 +47,7 @@ body {
 .grid-container {
   width: 100%;
   display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   border: 5px solid gray;
 }
 .grid-item {
@@ -59,6 +58,21 @@ body {
   height: 100%;
   border: 1px solid black;
   background-color: white;
+}
+
+/* these classes are for embedding youtube videos that have a responsive width */
+.container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 figure { display: table; }
@@ -79,7 +93,7 @@ p {
 /* Set styling options for the columns */
 .columns {
   float: left;
-  display: flex;
+  display:flex;
 }
 
 table {
@@ -91,16 +105,19 @@ th, td {
   padding: 15px;
   text-align: left;
   vertical-align: top;
+  font-size: 1em;
 }
   
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property plus margin */
 div.content {
   margin-left: 240px;
-  padding: 50px;
+  padding: 30px;
 }
 
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
+/* On screens that are less than 700px wide, make the sidebar into a topbar and show smallhome instead of bighome */
 @media screen and (max-width: 700px) {
+  #smallhome { display: block; }
+  #bighome { display: none; } 
   .sidenav {
     width: 95%;
     margin:auto;
@@ -110,8 +127,9 @@ div.content {
     top: 0;
     left: 0;
   }
+
   .sidenav a {float: left;}
-  div.content {margin-left: 0;}
+  div.content {margin-left: 0; padding:10px;}
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
@@ -120,6 +138,12 @@ div.content {
     text-align: center;
     float: none;
   }
+  div.content {padding:3px;}
+}
+
+@media screen and (min-width: 701px) {
+  #smallhome { display: none; }
+  #bighome { display: block; } 
 }
 
 }
@@ -141,12 +165,13 @@ div.content {
   
   <main>
     <div class="content">
-      <!-- Home page content -->
+      <!-- Home page content for large screen -->
+      <div id="bighome">
       <div class="columns">
         <div style="width:30%;">
-          <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/closeup-gray-background.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="90%"></a>
+          <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/closeup-gray-background.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="100%";></a>
         </div>
-        <div style="width:70%;">
+        <div style="width:70%; padding:30px;">
           <h1>Suvan Agarwal, Classical Guitarist</h1>
           <p>If you have any enquiries please do not hesitate to contact me through either the following email address, Facebook Messenger, or Instagram Messages.</p>
           <p>email: suvanagarwalguitar[at]gmail.com</p>
@@ -160,7 +185,25 @@ div.content {
           <a href="https://www.stephenaron.net/search?q=Suvan+Agarwal" target="_blank">Suvan Agarwal on Stephen Aron's Blog</a>
         </div>
       </div>
+      <div style="height:100vh;"></div>
+      </div>
+    
+    <!-- Home page content for small screen -->
+    <div id="smallhome">
+    <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/closeup-gray-background.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="100%", ></a>
+    <h3>Suvan Agarwal, Classical Guitarist</h1>
+    <p>If you have any enquiries please do not hesitate to contact me through either the following email address, Facebook Messenger, or Instagram Messages.</p>
+    <p>email: suvanagarwalguitar[at]gmail.com</p>
+    <h4>External Links:</h4>
+    <a href="https://www.youtube.com/@penguintube9223" target="_blank">Youtube Channel</a>
+    <br>
+    <a href="https://www.instagram.com/suvan_agarwal/" target="_blank">Instagram Page</a>
+    <br>
+    <a href="https://www.facebook.com/scrublinux" target="_blank">Facebook Page</a>
+    <br>
+    <a href="https://www.stephenaron.net/search?q=Suvan+Agarwal" target="_blank">Suvan Agarwal on Stephen Aron's Blog</a>
     <div style="height:100vh;"></div>
+    </div>
   <hr>
   <!-- Biography page content -->
   <div id="biography">
@@ -177,31 +220,21 @@ div.content {
   <div id="videos">
   <h1>Videos</h1>
   <p>Here are some videos for recommended listening. You can also access my whole collection at <a href="https://www.youtube.com/@penguintube9223" target="_blank">my Youtube Channel</a></p>
-  <figure>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/Rtj6hjkyGYg?si=a0RfBZuYUOtwNSJT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <figcaption>Concierto de Aranjuez: I. Allegro con Spirito<br> performed on November 19, 2023</figcaption>
-  </figure>
-
-  <figure>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/SbhaH29Pafo?si=_ATjCT2D-FE25R1_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <figcaption>Bach's D minor Violin Partita: I. Allemande (0:00), IV. Gigue (3:39)</a> <br>Ponce's Sonata Romantica: II. Andante (7:30), IV: Allegro (12:43) <br>performed on December 6, 2023</figcaption>
-  </figure>
-
-  <figure>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/6KK96-oQuO8?si=g9LLAaPu0eaD299Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <figcaption>Bach's D minor keyboard sonata (BWV 964): II. Andante (arr Suvan Agarwal) <br>performed on April 20, 2023</figcaption>
-  </figure>
   
-  <figure>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/LfxkgAUA3Rs?si=fzAoQJfihV5m2Rsu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <figcaption>Bach's Wachet Auf, Ruft uns die Stimme (BWV 645), arr David Russell <br>performed on April 20, 2023</figcaption>
-  </figure>1
+  <div class="container"><iframe src="https://www.youtube.com/embed/Rtj6hjkyGYg?si=a0RfBZuYUOtwNSJT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="video"></iframe></div>
+  <p>Concierto de Aranjuez: I. Allegro con Spirito<br> performed on November 19, 2023</p>
   
-  <figure>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/W4GqO-e9FFQ?si=_MJjfi0j4t8YV7ij" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <figcaption>Sonata K.27 by Scarlatti (arr Eliot fisk) <br>performed on April 20, 2023</figcaption>
-  </figure>
-  </div>
+  <div class="container"><iframe src="https://www.youtube.com/embed/SbhaH29Pafo?si=_ATjCT2D-FE25R1_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="video"></iframe></div>
+  <p>Bach's D minor Violin Partita: I. Allemande (0:00), IV. Gigue (3:39)</a> <br>Ponce's Sonata Romantica: II. Andante (7:30), IV: Allegro (12:43) <br>performed on December 6, 2023</p>
+  
+  <div class="container"><iframe src="https://www.youtube.com/embed/6KK96-oQuO8?si=g9LLAaPu0eaD299Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="video"></iframe></div>
+  <p>Bach's D minor keyboard sonata (BWV 964): II. Andante (arr Suvan Agarwal) <br>performed on April 20, 2023</p>
+  
+  <div class="container"><iframe src="https://www.youtube.com/embed/LfxkgAUA3Rs?si=fzAoQJfihV5m2Rsu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="video"></iframe></div>
+  <p>Bach's Wachet Auf, Ruft uns die Stimme (BWV 645), arr David Russell <br>performed on April 20, 2023</p>
+  
+  <div class="container"><iframe src="https://www.youtube.com/embed/W4GqO-e9FFQ?si=_MJjfi0j4t8YV7ij" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="video"></iframe></div>
+  <p>Sonata K.27 by Scarlatti (arr Eliot fisk) <br>performed on April 20, 2023</p>
   
     <hr>
     
@@ -211,44 +244,34 @@ div.content {
   <p>Here are some photos for use in programs, articles, promotional posters, and other relevant materials. To download a photo, click on it to open the image in a new tab, then right click and save image. 
   <div class="grid-container">
     <div class="grid-item">
-    <figure>
-    <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/closeup-gray-background.jpg" target="_blank">
-      <img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="90%">
-    </a>
-    <figcaption>Photo by Rosen-Jones Photography<br>2400x3600 pixels</figcaption>
-    </figure>
+      <figure>
+        <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/closeup-gray-background.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="90%"></a>
+        <figcaption>Photo by Rosen-Jones Photography<br>2400x3600 pixels</figcaption>
+      </figure>
     </div>
     <div class="grid-item">
-    <figure>
-    <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/playing-guitar-white-background.jpg" target="_blank">
-      <img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/playing-guitar-white-background.jpg" alt="Picture of Suvan Agarwal playing his guitar, with white background" width="90%">
-    </a>
-    <figcaption>Photo by Rosen-Jones Photography<br>1000x675 pixels</figcaption>
-    </figure>
+      <figure>
+        <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/playing-guitar-white-background.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/playing-guitar-white-background.jpg" alt="Picture of Suvan Agarwal playing his guitar, with white background" width="90%"></a>
+        <figcaption>Photo by Rosen-Jones Photography<br>1000x675 pixels</figcaption>
+      </figure>
     </div>
     <div class="grid-item">
-    <figure>
-    <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/holding-guitar-white-background.jpg" target="_blank">
-      <img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/holding-guitar-white-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, with white background" width="90%">
-    </a>
-    <figcaption>Photo by Rosen-Jones Photography<br>3600x2400 pixels</figcaption>
-    </figure>
+      <figure>
+        <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/holding-guitar-white-background.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/holding-guitar-white-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, with white background" width="90%"></a>
+        <figcaption>Photo by Rosen-Jones Photography<br>3600x2400 pixels</figcaption>
+      </figure>
     </div>
     <div class="grid-item">
-    <figure>
-    <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/playing-guitar-warner-hall.jpg" target="_blank">
-      <img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/playing-guitar-warner-hall.jpg" alt="Picture of Suvan Agarwal playing his guitar in Warner Hall" width="90%">
-    </a>
-    <figcaption>2500x1875 pixels</figcaption>
-    </figure>
+      <figure>
+        <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/playing-guitar-warner-hall.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/playing-guitar-warner-hall.jpg" alt="Picture of Suvan Agarwal playing his guitar in Warner Hall" width="90%"></a>
+        <figcaption>2500x1875 pixels</figcaption>
+      </figure>
     </div>
     <div class="grid-item">
-    <figure>
-    <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/warner-hall-aranjuez-performance.jpg" target="_blank">
-      <img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/warner-hall-aranjuez-performance.jpg" alt="Picture of Suvan Agarwal playing his guitar with piano accompaniment in Warner Hall" width="90%">
-    </a>
-    <figcaption>1500x1500 pixels</figcaption>
-    </figure>
+      <figure>
+        <a href="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/warner-hall-aranjuez-performance.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/suvanagarwal.github.io/warner-hall-aranjuez-performance.jpg" alt="Picture of Suvan Agarwal playing his guitar with piano accompaniment in Warner Hall" width="90%"></a>
+        <figcaption>1500x1500 pixels</figcaption>
+      </figure>
     </div>
   </div>
   </div>
