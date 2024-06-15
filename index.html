@@ -1,145 +1,169 @@
 <!DOCTYPE html>
-<html lang="en-us" /> 
+<html lang="en-us" />
 <head>
-<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="tux.png" type="image/x-icon"/>
-<link rel="shortcut icon" href="tux.png" type="image/x-icon" />
-<title>Suvan Agarwal</title>
-<style>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="tux.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="tux.png" type="image/x-icon" />
+  <title>Suvan Agarwal</title>
+  <style>
+    body {
+      background-color: #FAF9F6;
+    }
 
-body {
-  background-color: #FAF9F6;
-}
+    .sidenav {
+      width: 190px;
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      z-index: 1;
+      background-color: Maroon;
+      overflow-x: hidden;
+      border: 10px solid #FAF9F6;
+      box-shadow: 0 0 0 2px gray;
+    }
 
-.sidenav {
-  width: 190px;
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  z-index: 1;
-  background-color: Maroon;
-  overflow-x: hidden;
-  border: 10px solid #FAF9F6;
-  box-shadow: 0 0 0 2px gray;
-}
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 28px;
+      color: white;
+      display: block;
+    }
 
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 28px;
-  color: white;
-  display: block;
-}
+    .sidenav h1 {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 36px;
+      color: white;
+      display: block;
+    }
 
-.sidenav h1 {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 36px;
-  color: white;
-  display: block;
-}
+    .sidenav a:hover {
+      transition: 0.4s;
+      background-color: #ddd;
+      color: black;
+    }
 
-.sidenav a:hover {
-  transition: 0.4s;
-  background-color: #ddd;
-  color: black;
-}
+    .grid-container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      border: 5px solid gray;
+    }
 
-.grid-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  border: 5px solid gray;
-}
-.grid-item {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
-  background-color: white;
-}
+    .grid-item {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+      background-color: white;
+    }
 
-/* these classes are for embedding youtube videos that have a responsive width */
-.container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-}
-.video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+    /* these classes are for embedding youtube videos that have a responsive width */
+    .container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
 
-figure { display: table; }
-figcaption { display: table-caption; caption-side: bottom; text-align: center;}
+    .video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-h1 {
-  font-size: 48px;
-}
+    figure {
+      display: table;
+    }
 
-h3 {
-  font-size: 24px;
-}
+    figcaption {
+      display: table-caption;
+      caption-side: bottom;
+      text-align: center;
+    }
 
-p {
-  font-size: 16px;
-}
+    h1 {
+      font-size: 48px;
+    }
 
-/* Set styling options for the columns */
-.columns {
-  float: left;
-  display:flex;
-}
-  
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property plus margin */
-div.content {
-  margin-left: 240px;
-  padding: 30px;
-}
+    h3 {
+      font-size: 24px;
+    }
 
-/* On screens that are less than 700px wide, make the sidebar into a topbar and show smallhome instead of bighome */
-@media screen and (max-width: 900px) {
-  #smallhome { display: block; }
-  #bighome { display: none; } 
-  .sidenav {
-    width: 95%;
-    margin:auto;
-    height:auto;
-    position: relative;
-    top: 0;
-    left: 0;
-  }
+    p {
+      font-size: 16px;
+    }
 
-  .sidenav a {float: left;}
-  div.content {margin-left: 0; padding:10px;}
-}
+    /* Set styling options for the columns */
+    .columns {
+      float: left;
+      display: flex;
+    }
 
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-  .sidenav a {
-    float: none;
-  }
-  div.content {padding:3px;}
-}
+    /* Page content. The value of the margin-left property should match the value of the sidebar's width property plus margin */
+    div.content {
+      margin-left: 240px;
+      padding: 30px;
+    }
 
-@media screen and (min-width: 901px) {
-  #smallhome { display: none; }
-  #bighome { display: block; } 
-}
+    /* On screens that are less than 700px wide, make the sidebar into a topbar and show smallhome instead of bighome */
+    @media screen and (max-width: 900px) {
+      #smallhome {
+        display: block;
+      }
 
-}
+      #bighome {
+        display: none;
+      }
 
-</style>
+      .sidenav {
+        width: 95%;
+        margin: auto;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      .sidenav a {
+        float: left;
+      }
+
+      div.content {
+        margin-left: 0;
+        padding: 10px;
+      }
+    }
+
+    /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+    @media screen and (max-width: 400px) {
+      .sidenav a {
+        float: none;
+      }
+
+      div.content {
+        padding: 3px;
+      }
+    }
+
+    @media screen and (min-width: 901px) {
+      #smallhome {
+        display: none;
+      }
+
+      #bighome {
+        display: block;
+      }
+    }
+    }
+  </style>
 </head>
-  <body>
-
-
+<body>
   <!-- Side navigation -->
   <div class="sidenav">
     <h1>Suvan Agarwal</h1>
@@ -150,376 +174,375 @@ div.content {
     <a href="#photos">Photos</a>
     <a href="#profile">Profile</a>
     <a href="#awards">Awards</a>
-
   </div>
-  
   <main>
     <div class="content">
       <!-- Home page content for large screen -->
       <div id="bighome">
-      <div class="columns">
-        <div>
-          <a href="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" target="_blank"><img src="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="400px";></a>
+        <div class="columns">
+          <div>
+            <a href="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" target="_blank">
+              <img src="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="400px" ;>
+            </a>
+          </div>
+          <div style="padding:30px;">
+            <h1>Suvan Agarwal</h1>
+            <h1>Classical Guitarist</h1>
+            <p>A prizewinning American guitarist, Suvan Agarwal has expanded the limits of the six-string guitar repertoire with his transcriptions of baroque and romantic-era keyboard music. A recent graduate of <a href="https://www.oberlin.edu/conservatory" target="_blank">Oberlin Conservatory</a>, he will pursue a masters degree at the <a href="https://www.rcs.ac.uk/" target="_blank">Royal Conservatoire of Scotland</a> as a recipient of the prestigious <a href="https://www.abrsm.org/en-gb/our-reinvestment-in-music-education/scholarships" target="_blank">ABRSM post-graduate fellowship.</a>
+            </p>
+            <h4>Contact: <em>email: contact[at]suvanagarwal.com</em></h4>
+            <h4>Subscribe to my mailing list!</h4>
+            <div id="mc_embed_shell">
+              <div id="mc_embed_signup">
+                <form action="https://suvanagarwal.us14.list-manage.com/subscribe/post?u=d823b58413b3b5a888aaf7a1c&amp;id=20c7ee9f46&amp;f_id=007dfee3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+                  <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL">Email Address: </label>
+                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                    </div>
+                    <div id="mce-responses" class="clear foot">
+                      <div class="response" id="mce-error-response" style="display: none;"></div>
+                      <div class="response" id="mce-success-response" style="display: none;"></div>
+                    </div>
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;"> /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */ <input type="text" name="b_d823b58413b3b5a888aaf7a1c_20c7ee9f46" tabindex="-1" value="">
+                    </div>
+                    <div class="optionalParent">
+                      <div class="clear foot">
+                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <a href="https://www.youtube.com/@penguinplaysguitar123" target="_blank">Youtube Channel</a>
+            <br>
+            <a href="https://www.instagram.com/suvan_agarwal/" target="_blank">Instagram Page</a>
+            <br>
+            <a href="https://www.facebook.com/scrublinux" target="_blank">Facebook Page</a>
+            <br>
+            <a href="https://www.stephenaron.net/search?q=Suvan+Agarwal" target="_blank">Suvan Agarwal on Stephen Aron's Blog</a>
+          </div>
         </div>
-        <div style="padding:30px;">
-          <h1>Suvan Agarwal</h1>
-          <h1>Classical Guitarist</h1>
-          <p>A prizewinning American guitarist, Suvan Agarwal has expanded the limits of the six-string guitar repertoire with his transcriptions of baroque and romantic-era keyboard music. A recent graduate of <a href="https://www.oberlin.edu/conservatory" target="_blank">Oberlin Conservatory</a>, he will pursue a masters degree at the <a href="https://www.rcs.ac.uk/" target="_blank">Royal Conservatoire of Scotland</a> as a recipient of the prestigious <a href="https://www.abrsm.org/en-gb/our-reinvestment-in-music-education/scholarships" target="_blank">ABRSM post-graduate fellowship.</a></p>
-          <h4>Contact:</h4>
-          <p><em>email: contact[at]suvanagarwal.com</em></p>
+        <div style="height:100vh;"></div>
+      </div>
+      <!-- Home page content for small screen -->
+      <div id="smallhome">
+        <a href="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" target="_blank">
+          <img loading="lazy" src="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="100%" ,>
+        </a>
+        <h3>Suvan Agarwal, Classical Guitarist </h1>
+          <p>A prizewinning American guitarist, Suvan Agarwal has expanded the limits of the six-string guitar repertoire with his transcriptions of baroque and romantic-era keyboard music. A recent graduate of <a href="https://www.oberlin.edu/conservatory" target="_blank">Oberlin Conservatory</a>, he will pursue a masters degree at the <a href="https://www.rcs.ac.uk/" target="_blank">Royal Conservatoire of Scotland</a> as a recipient of the prestigious <a href="https://www.abrsm.org/en-gb/our-reinvestment-in-music-education/scholarships" target="_blank">ABRSM post-graduate fellowship.</a>
+          </p>
+          <p>email: suvanagarwalguitar[at]gmail.com</p>
           <h4>External Links:</h4>
-          <a href="https://www.youtube.com/@penguinplaysguitar123" target="_blank">Youtube Channel</a>
+          <a href="https://www.youtube.com/@penguintube9223" target="_blank">Youtube Channel</a>
           <br>
           <a href="https://www.instagram.com/suvan_agarwal/" target="_blank">Instagram Page</a>
           <br>
           <a href="https://www.facebook.com/scrublinux" target="_blank">Facebook Page</a>
           <br>
           <a href="https://www.stephenaron.net/search?q=Suvan+Agarwal" target="_blank">Suvan Agarwal on Stephen Aron's Blog</a>
+      </div>
+      <hr>
+      <!-- Biography page content -->
+      <div id="biography">
+        <h1>Biography</h1>
+        <p>Last updated on May 7, 2024</p>
+        <p>Suvan Agarwal (b.2001) is an American guitarist with international experience. He has won numerous prizes at the Columbus Guitar Symposium Competition, Oberlin Conservatory Bach Competition, Appalachian State Guitarfest Competition, Louisville Guitar Competition, Guitar Foundation of America International Ensemble Competition, and Tuesday Musical competition, where in addition to first prize in the guitar category he won the audience prize in the final round, open to winners from all instrument categories. He has performed in both the United States and Japan.</p>
+        <p>Suvan started playing guitar at the age of five taught by Frank Longay, creator of the Suzuki guitar method. During high school he studied guitar under the guidance of Alexandra Viloteau (née Iranfar). Suvan recently graduated from Oberlin College and Conservatory, where he studied guitar under <a href="https://www.stephenaron.net/bio" target="_blank">Stephen Aron</a> and obtained two bachelors degrees in guitar performance and physics. He has participated in masterclasses with David Russell, Leo Brouwer, and Raphaella Smits, among many others. He has also had instruction from Gentaro Takada and Thomas Viloteau. Suvan will soon enter the <a href="https://www.rcs.ac.uk/" target="_blank">Royal Conservatoire of Scotland</a>, where he will pursue a master in music degree studying under <a href="https://matthewmcallister.com/home" target="_blank">Matthew McAllister</a> and Allan Neave. He is a recipient of the prestigious <a href="https://www.abrsm.org/en-gb/our-reinvestment-in-music-education/scholarships" target="_blank">ABRSM post-graduate fellowship.</a>
+        </p>
+        <p>In addition to his musical activities, Suvan's interests include physics and computer science. In 2022, Suvan was a recipient of a National Science Foundation (NSF) scholarship to conduct geophysics research at the University of Hawaii, and in 2023, a scholarship from the Friends of the University of Tokyo (FUTI) foundation to conduct geophysics research at the University of Tokyo Earthquake Research Institute. He studied abroad at Waseda University in 2022, and was the first Oberlin College student ever to receive the Bridging Scholarship from the United States-Japan Bridging Foundation. Suvan was born in Japan and grew up in Sunnyvale, California. His mother is Japanese-American and his father is Indian. He speaks English and Japanese.</p>
+        <p>Suvan plays a 2018 <a href="https://www.hillguitar.com/" target="_blank">Kenny Hill</a> Signature Series guitar with a spruce/cedar double top and <a href="https://www.daddario.com/products/guitar/classical-guitar/pro-arte-carbon/ej46ff-pro-arte-carbon-dynacore-basses-hard-tension/" target="_blank">D'Addario high tension carbon strings</a>. </p>
+      </div>
+      <hr>
+      <!-- Events page content -->
+      <div id="events">
+        <h1>Events</h1>
+        <figure>
+          <a href="https://suvanagarwalguitar.github.io/pre-gfa-poster.png" target="_blank">
+            <img loading="lazy" src="https://suvanagarwalguitar.github.io/pre-gfa-poster.png" width="90%">
+          </a>
+        </figure>
+        <h4>Past Events:</h4>
+        <a href="https://www.vermilionphotojournal.com/community/uccc-vermilion-hosts-classical-guitarist-concert/image_532928d6-e72f-11ee-a94c-f707ab742e1c.html" target="_blank">March 24, 2024: Concert at Vermilion United Church of Christ</a>
+        <br>
+        <a href="https://www.lorainpubliclibrary.org/programs?action=show&id=41972" target="_blank">March 27, 2024: Concert at Avon Public Library</a>
+        <br>
+        <a href="https://uucleveland.org/uucc_event/free-concert-in-our-sanctuary-classical-guitar-with-suvan-agarwal/" target="_blank">March 28, 2024: Concert at Cleveland Unitarian Universalist Congregation</a>
+        <br>
+        <a>March 30, 2024: Concert at Lorain Public Library</a>
+        <br>
+        <a href="https://suvanagarwalguitar.github.io/5thyearrecitalposter.png" target="_blank">April 2, 2024: Solo Recital in Fairchild Chapel at Oberlin Conservatory</a>
+        <br>
+        <a href="https://www.oberlin.edu/events/bach-competition-winners-recital" target="_blank">April 6, 2024: Bach Competition at Oberlin Conservatory: Winners Concert</a>
+      </div>
+      <hr>
+      <!-- Videos page content -->
+      <div id="videos">
+        <h1>Videos</h1>
+        <p>Here are some videos for recommended listening. You can also access my whole collection at <a href="https://www.youtube.com/@penguintube9223" target="_blank">my Youtube Channel</a>
+        </p>
+        <div style="height: 0px; overflow: hidden; padding-top: 56.25%; position: relative; width: 100%;">
+          <iframe style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" src="https://tube.rvere.com/embed?v=Rtj6hjkyGYg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+        <p>Concierto de Aranjuez: I. Allegro con Spirito <br> performed on November 19, 2023 </p>
+        <div style="height: 0px; overflow: hidden; padding-top: 56.25%; position: relative; width: 100%;">
+          <iframe style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" src="https://tube.rvere.com/embed?v=SbhaH29Pafo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+        <p>Bach's D minor Violin Partita: I. Allemande (0:00), IV. Gigue (3:39) </a>
+          <br>Ponce's Sonata Romantica: II. Andante (7:30), IV: Allegro (12:43) <br>performed on December 6, 2023
+        </p>
+        <div style="height: 0px; overflow: hidden; padding-top: 56.25%; position: relative; width: 100%;">
+          <iframe style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" src="https://tube.rvere.com/embed?v=6KK96-oQuO8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+        <p>Bach's D minor keyboard sonata (BWV 964): II. Andante (arr Suvan Agarwal) <br>performed on April 20, 2023 </p>
+        <div style="height: 0px; overflow: hidden; padding-top: 56.25%; position: relative; width: 100%;">
+          <iframe style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" src="https://tube.rvere.com/embed?v=LfxkgAUA3Rs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+        <p>Bach's Wachet Auf, Ruft uns die Stimme (BWV 645), arr David Russell <br>performed on April 20, 2023 </p>
+        <div style="height: 0px; overflow: hidden; padding-top: 56.25%; position: relative; width: 100%;">
+          <iframe style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" src="https://tube.rvere.com/embed?v=DvtG5MEVulM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+        <p>Bach's D Minor Violin Partita BWV 1004 <br>performed on April 6, 2024 </p>
+        <hr>
+        <!-- Photos page content -->
+        <div id="photos">
+          <h1>Photos</h1>
+          <p>Here are some photos for use in programs, articles, promotional posters, and other relevant materials. To download a photo, click on it to open the image in a new tab, then right click and save image.
+          <div class="grid-container">
+            <div class="grid-item">
+              <figure>
+                <a href="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" target="_blank">
+                  <img loading="lazy" src="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="90%">
+                </a>
+                <figcaption>Photo by Rosen-Jones Photography <br>2400x3600 pixels </figcaption>
+              </figure>
+            </div>
+            <div class="grid-item">
+              <figure>
+                <a href="https://suvanagarwalguitar.github.io/playing-guitar-white-background.jpg" target="_blank">
+                  <img loading="lazy" src="https://suvanagarwalguitar.github.io/playing-guitar-white-background.jpg" alt="Picture of Suvan Agarwal playing his guitar, with white background" width="90%">
+                </a>
+                <figcaption>Photo by Rosen-Jones Photography <br>1000x675 pixels </figcaption>
+              </figure>
+            </div>
+            <div class="grid-item">
+              <figure>
+                <a href="https://suvanagarwalguitar.github.io/holding-guitar-white-background.jpg" target="_blank">
+                  <img loading="lazy" src="https://suvanagarwalguitar.github.io/holding-guitar-white-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, with white background" width="90%">
+                </a>
+                <figcaption>Photo by Rosen-Jones Photography <br>3600x2400 pixels </figcaption>
+              </figure>
+            </div>
+            <div class="grid-item">
+              <figure>
+                <a href="https://suvanagarwalguitar.github.io/playing-guitar-warner-hall.jpg" target="_blank">
+                  <img loading="lazy" src="https://suvanagarwalguitar.github.io/playing-guitar-warner-hall.jpg" alt="Picture of Suvan Agarwal playing his guitar in Warner Hall" width="90%">
+                </a>
+                <figcaption>2500x1875 pixels</figcaption>
+              </figure>
+            </div>
+            <div class="grid-item">
+              <figure>
+                <a href="https://suvanagarwalguitar.github.io/fairchild_far.jpg" target="_blank">
+                  <img loading="lazy" src="https://suvanagarwalguitar.github.io/fairchild_far.jpg" alt="Picture of Suvan Agarwal playing his guitar in the Oberlin Bach Competition Winners Concert in Fairchild Chapel" width="90%">
+                </a>
+                <figcaption>3600x2400 pixels</figcaption>
+              </figure>
+            </div>
+            <div class="grid-item">
+              <figure>
+                <a href="https://suvanagarwalguitar.github.io/fairchild_mid.jpg" target="_blank">
+                  <img loading="lazy" src="https://suvanagarwalguitar.github.io/fairchild_mid.jpg" alt="Picture of Suvan Agarwal playing his guitar in the Oberlin Bach Competition Winners Concert in Fairchild Chapel" width="90%">
+                </a>
+                <figcaption>3600x2400 pixels</figcaption>
+              </figure>
+            </div>
+            <div class="grid-item">
+              <figure>
+                <a href="https://suvanagarwalguitar.github.io/fairchild_close.jpg" target="_blank">
+                  <img loading="lazy" src="https://suvanagarwalguitar.github.io/fairchild_close.jpg" alt="Picture of Suvan Agarwal playing his guitar in the Oberlin Bach Competition Winners Concert in Fairchild Chapel" width="90%">
+                </a>
+                <figcaption>3600x2400 pixels</figcaption>
+              </figure>
+            </div>
+            <div class="grid-item">
+              <figure>
+                <a href="https://suvanagarwalguitar.github.io/5thyearrecitalposter.png" target="_blank">
+                  <img loading="lazy" src="https://suvanagarwalguitar.github.io/5thyearrecitalposter.png" width="90%">
+                </a>
+                <figcaption>1728x2304 pixels</figcaption>
+              </figure>
+            </div>
+            <div class="grid-item">
+              <figure>
+                <a href="https://suvanagarwalguitar.github.io/upcoming-concerts-march2024.png" target="_blank">
+                  <img loading="lazy" src="https://suvanagarwalguitar.github.io/upcoming-concerts-march2024.png" width="90%">
+                </a>
+                <figcaption>3600x2400 pixels</figcaption>
+              </figure>
+            </div>
+            <div class="grid-item">
+              <figure>
+                <a href="https://suvanagarwalguitar.github.io/pre-gfa-poster.png" target="_blank">
+                  <img loading="lazy" src="https://suvanagarwalguitar.github.io/pre-gfa-poster.png" width="90%">
+                </a>
+                <figcaption>3600x2400 pixels</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <!-- Profile page content -->
+        <div id="profile">
+          <h1>Profile</h1>
+          <p>
+            <b>Name:</b> Suvan Agarwal (pronounced soo-vahn ah-gar-wal)
+          </p>
+          <p>
+            <b>Age:</b> born in 2001
+          </p>
+          <p>
+            <b>Hometown:</b> Sunnyvale, California
+          </p>
+          <p>
+            <b>Languages:</b> English, Japanese
+          </p>
+          <br>
+          <p>
+            <b>Education:</b>
+          </p>
+          <ul>
+            <li>*incoming* Royal Conservatoire of Scotland, Mmus in Guitar, expected 2026</li>
+            <li>Oberlin Conservatory, BM in Guitar, 2024</li>
+            <li>Oberlin College, BA in Physics, 2024</li>
+            <li>Homestead High School, 2019</li>
+          </ul>
+          <br>
+          <div id="awards">
+            <p>
+              <b>Awards and Scholarships:</b>
+            </p>
+            <ul>
+              <li>2024 Appalachian State University Guitar Festival Competition, 2nd prize</li>
+              <li>2024 Oberlin Conservatory Bach Competition (open to all string instruments), Winner</li>
+              <li>2024 Columbus Guitar Symposium Collegiate Competition, 2nd prize</li>
+              <li>2023 Louisville Collegiate Guitar Competition, 3rd prize</li>
+              <li>2023, Associated Board of the Royal Schools of Music (ABRSM) post-graduate scholarship to study at the Royal Conservatoire of Scotland</li>
+              <li>2023, Friends of University of Tokyo, Inc. (FUTI) scholarship to participate in the University of Tokyo Research Internship Program (UTRIP) at the UTokyo Earthquake Research Institute (ERI)</li>
+              <li>2022 John M. Ream Jr. DDS People’s Choice Award, awarded to the audience choice at the final round of the Tuesday Musical All-Ohio Scholarship Competition, open to all instruments.</li>
+              <li>2022 Margaret Watts Hunter Scholarship for Classical Guitar, awarded to the winner of the Tuesday Musical All-Ohio Scholarship Competition, guitar division</li>
+              <li>2022, The Bridging Scholarship awarded by the United States-Japan Bridging Foundation for study abroad at Waseda University</li>
+              <li>2022 USA National Science Foundation scholarship to conduct geophysics research at the Hawaii Geophysics Institute at the University of Hawaii at Manoa</li>
+              <li>2018 Guitar Foundation of America International Youth Ensemble Competition, 1st prize</li>
+            </ul>
+          </div>
+          <br>
+          <p>
+            <b>Comprehensive Repertoire List:</b>
+            <br>
+            <i>Asterisk* indicates a current work in progress as of May 7 2024. All other listed works have been performed in public.</i>
+          </p>
+          <ul>
+            <li>J.S. Bach <ul>
+                <li>BWV 1004 D minor violin partita (all movements, arr Suvan Agarwal)</li>
+                <li>BWV 998 E flat major lute suite (all movements)</li>
+                <li>BWV 1006 E major lute suite (all movements)</li>
+                <li>BWV 645 Wachet auf, ruft uns die stimme (arr David Russell)</li>
+                <li>BWV 973 Concerto transcription after Vivaldi (all movements, arr Suvan Agarwal)</li>
+                <li>BWV 964 D minor keyboard sonata (arr Suvan Agarwal) <ul>
+                    <li>Andante</li>
+                  </ul>
+                </li>
+                <li>BWV 1005 C major violin sonata (arr Suvan Agarwal) <ul>
+                    <li>Largo</li>
+                  </ul>
+                </li>
+                <li>BWV 825 B flat major keyboard partita (arr Tilman Hoppstock) <ul>
+                    <li>Gigue</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Domenico Scarlatti <ul>
+                <li>Sonata K.27 (arr Eliot Fisk)</li>
+                <li>Sonata K.209 (arr Manuel Barrueco)</li>
+              </ul>
+            </li>
+            <li>Franz Schubert <ul>
+                <li>Sonata for Arpeggione and Piano in A minor (all movements, arpeggione part arranged for guitar by Suvan Agarwal)</li>
+              </ul>
+            </li>
+            <li>Robert Schumann <ul>
+                <li>Kinderszenen (all movements, arr Suvan Agarwal)</li>
+              </ul>
+            </li>
+            <li>Joaquin Rodrigo <ul>
+                <li>Concierto de Aranjuez (all movements)</li>
+              </ul>
+            </li>
+            <li>Felix Mendelssohn <ul>
+                <li>Song without words Op 30 No 1 (arr Stephen Aron)*</li>
+              </ul>
+            </li>
+            <li>Lennox Berkeley <ul>
+                <li>Sonatina for Guitar (first movement)*</li>
+              </ul>
+            </li>
+            <li>Agustin Barrios <ul>
+                <li>Sueno en la Floresta</li>
+                <li>Mazurka Appasionata</li>
+                <li>La Catedral</li>
+              </ul>
+            </li>
+            <li>Anton Diabelli <ul>
+                <li>Sonata in A minor (Bream edit, all movements)</li>
+              </ul>
+            </li>
+            <li>Giulio Regondi <ul>
+                <li>Ten Etudes <ul>
+                    <li>Etude 1</li>
+                    <li>Etude 8</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Toru Takemitsu <ul>
+                <li>In The Woods <ul>
+                    <li>Wainscot Pond</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Manuel Ponce <ul>
+                <li>Sonata Romantica (all movements)</li>
+                <li>Prelude and Ballet</li>
+              </ul>
+            </li>
+            <li>Leo Brouwer <ul>
+                <li>Sonata 1 (all movements)</li>
+              </ul>
+            </li>
+            <li>Mauro Giuliani <ul>
+                <li>Grand Overture Op. 61</li>
+              </ul>
+            </li>
+          </ul>
+          <br>
+          <p>
+            <b>Additional Experience:</b>
+          </p>
+          <ul>
+            <li>Mar 2020-present, Oberlin College Computer and Information Technology Department, Help Desk Technician</li>
+            <li>Jun 2023-Aug 2023, University of Tokyo Earthquake Research Institute, Shingo Watada Lab, Research Intern</li>
+            <li>May 2022-Jul 2022, Hawaii Institute of Geophysics and Planetology at University of Hawaii at Manoa, Shiv Sharma Lab, Research Intern</li>
+            <li>Jan 2021-Jul 2021, Oberlin College Department of Physics, Stephen Fitzgerald Lab, Research Assistant</li>
+            <li>Apr 2015-Jul 2019, Fairbrae Manta Rays Swim Team, Assistant Swim Coach</li>
+          </ul>
         </div>
       </div>
-      <div style="height:100vh;"></div>
-      </div>
-    
-    <!-- Home page content for small screen -->
-    <div id="smallhome">
-    <a href="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="100%", ></a>
-    <h3>Suvan Agarwal, Classical Guitarist</h1>
-    <p>A prizewinning American guitarist, Suvan Agarwal has expanded the limits of the six-string guitar repertoire with his transcriptions of baroque and romantic-era keyboard music. A recent graduate of <a href="https://www.oberlin.edu/conservatory" target="_blank">Oberlin Conservatory</a>, he will pursue a masters degree at the <a href="https://www.rcs.ac.uk/" target="_blank">Royal Conservatoire of Scotland</a> as a recipient of the prestigious <a href="https://www.abrsm.org/en-gb/our-reinvestment-in-music-education/scholarships" target="_blank">ABRSM post-graduate fellowship.</a></p>
-    <p>email: suvanagarwalguitar[at]gmail.com</p>
-    <h4>External Links:</h4>
-    <a href="https://www.youtube.com/@penguintube9223" target="_blank">Youtube Channel</a>
-    <br>
-    <a href="https://www.instagram.com/suvan_agarwal/" target="_blank">Instagram Page</a>
-    <br>
-    <a href="https://www.facebook.com/scrublinux" target="_blank">Facebook Page</a>
-    <br>
-    <a href="https://www.stephenaron.net/search?q=Suvan+Agarwal" target="_blank">Suvan Agarwal on Stephen Aron's Blog</a>
     </div>
-  <hr>
-  
-  
-  
-  <!-- Biography page content -->
-  <div id="biography">
-    <h1>Biography</h1>
-    <p>Last updated on May 7, 2024</p>
-    <p>Suvan Agarwal (b.2001) is an American guitarist with international experience. He has won numerous prizes at the Columbus Guitar Symposium Competition, Oberlin Conservatory Bach Competition, Appalachian State Guitarfest Competition, Louisville Guitar Competition, Guitar Foundation of America International Ensemble Competition, and Tuesday Musical competition, where in addition to first prize in the guitar category he won the audience prize in the final round, open to winners from all instrument categories. He has performed in both the United States and Japan.</p>
-    <p>Suvan started playing guitar at the age of five taught by Frank Longay, creator of the Suzuki guitar method. During high school he studied guitar under the guidance of Alexandra Viloteau (née Iranfar). Suvan recently graduated from Oberlin College and Conservatory, where he studied guitar under <a href="https://www.stephenaron.net/bio" target="_blank">Stephen Aron</a> and obtained two bachelors degrees in guitar performance and physics. He has participated in masterclasses with David Russell, Leo Brouwer, and Raphaella Smits, among many others. He has also had instruction from Gentaro Takada and Thomas Viloteau. Suvan will soon enter the <a href="https://www.rcs.ac.uk/" target="_blank">Royal Conservatoire of Scotland</a>, where he will pursue a master in music degree   studying under <a href="https://matthewmcallister.com/home" target="_blank">Matthew McAllister</a> and Allan Neave. He is a recipient of the prestigious <a href="https://www.abrsm.org/en-gb/our-reinvestment-in-music-education/scholarships" target="_blank">ABRSM post-graduate fellowship.</a></p>
-    <p>In addition to his musical activities, Suvan's interests include physics and computer science. In 2022, Suvan was a recipient of a National Science Foundation (NSF) scholarship to conduct geophysics research at the University of Hawaii, and in 2023, a scholarship from the Friends of the University of Tokyo (FUTI) foundation to conduct geophysics research at the University of Tokyo Earthquake Research Institute. He studied abroad at Waseda University in 2022, and was the first Oberlin College student ever to receive the Bridging Scholarship from the United States-Japan Bridging Foundation. Suvan was born in Japan and grew up in Sunnyvale, California. His mother is Japanese-American and his father is Indian. He speaks English and Japanese.</p>
-    <p>Suvan plays a 2018 <a href="https://www.hillguitar.com/" target="_blank">Kenny Hill</a> Signature Series guitar with a spruce/cedar double top and <a href="https://www.daddario.com/products/guitar/classical-guitar/pro-arte-carbon/ej46ff-pro-arte-carbon-dynacore-basses-hard-tension/" target="_blank">D'Addario high tension carbon strings</a>.</p>
-  </div>
-  
-  <hr>
-
-  <!-- Events page content -->
-  <div id="events">
-    <h1>Events</h1>
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/pre-gfa-poster.png" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/pre-gfa-poster.png" width="90%"></a>
-      </figure>
-    <h4>Past Events:</h4>
-      <a href="https://www.vermilionphotojournal.com/community/uccc-vermilion-hosts-classical-guitarist-concert/image_532928d6-e72f-11ee-a94c-f707ab742e1c.html" target="_blank">March 24, 2024: Concert at Vermilion United Church of Christ</a>
-      <br>  
-      <a href="https://www.lorainpubliclibrary.org/programs?action=show&id=41972" target="_blank">March 27, 2024: Concert at Avon Public Library</a>
-      <br>
-      <a href="https://uucleveland.org/uucc_event/free-concert-in-our-sanctuary-classical-guitar-with-suvan-agarwal/" target="_blank">March 28, 2024: Concert at Cleveland Unitarian Universalist Congregation</a>
-      <br>
-      <a>March 30, 2024: Concert at Lorain Public Library</a>
-      <br>
-      <a href="https://suvanagarwalguitar.github.io/5thyearrecitalposter.png" target="_blank">April 2, 2024: Solo Recital in Fairchild Chapel at Oberlin Conservatory</a>
-      <br>
-      <a href="https://www.oberlin.edu/events/bach-competition-winners-recital" target="_blank">April 6, 2024: Bach Competition at Oberlin Conservatory: Winners Concert</a>
-  </div>
-  
-  
-  <hr>
-  
-  <!-- Videos page content -->
-  <div id="videos">
-  <h1>Videos</h1>
-  <p>Here are some videos for recommended listening. You can also access my whole collection at <a href="https://www.youtube.com/@penguintube9223" target="_blank">my Youtube Channel</a></p>
-  
-  <div style="height: 0px; overflow: hidden; padding-top: 56.25%; position: relative; width: 100%;">
-        <iframe
-            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-            src="https://tube.rvere.com/embed?v=Rtj6hjkyGYg"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen>
-        </iframe>
-    </div>
-  <p>Concierto de Aranjuez: I. Allegro con Spirito<br> performed on November 19, 2023</p>
-  
-  <div style="height: 0px; overflow: hidden; padding-top: 56.25%; position: relative; width: 100%;">
-        <iframe
-            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-            src="https://tube.rvere.com/embed?v=SbhaH29Pafo"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen>
-        </iframe>
-    </div>
-  <p>Bach's D minor Violin Partita: I. Allemande (0:00), IV. Gigue (3:39)</a> <br>Ponce's Sonata Romantica: II. Andante (7:30), IV: Allegro (12:43) <br>performed on December 6, 2023</p>
-  
-  <div style="height: 0px; overflow: hidden; padding-top: 56.25%; position: relative; width: 100%;">
-        <iframe
-            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-            src="https://tube.rvere.com/embed?v=6KK96-oQuO8"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen>
-        </iframe>
-    </div>
-  <p>Bach's D minor keyboard sonata (BWV 964): II. Andante (arr Suvan Agarwal) <br>performed on April 20, 2023</p>
-  
-  <div style="height: 0px; overflow: hidden; padding-top: 56.25%; position: relative; width: 100%;">
-        <iframe
-            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-            src="https://tube.rvere.com/embed?v=LfxkgAUA3Rs"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen>
-        </iframe>
-    </div>
-  <p>Bach's Wachet Auf, Ruft uns die Stimme (BWV 645), arr David Russell <br>performed on April 20, 2023</p>
-  
-  <div style="height: 0px; overflow: hidden; padding-top: 56.25%; position: relative; width: 100%;">
-        <iframe
-            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-            src="https://tube.rvere.com/embed?v=DvtG5MEVulM"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen>
-        </iframe>
-    </div>
-  <p>Bach's D Minor Violin Partita BWV 1004<br>performed on April 6, 2024</p>
-  
-    <hr>
-    
-  <!-- Photos page content -->
-  <div id="photos">
-  <h1>Photos</h1>
-  <p>Here are some photos for use in programs, articles, promotional posters, and other relevant materials. To download a photo, click on it to open the image in a new tab, then right click and save image. 
-  <div class="grid-container">
-    <div class="grid-item">
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/closeup-gray-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, close up with gray background" width="90%"></a>
-        <figcaption>Photo by Rosen-Jones Photography<br>2400x3600 pixels</figcaption>
-      </figure>
-    </div>
-    <div class="grid-item">
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/playing-guitar-white-background.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/playing-guitar-white-background.jpg" alt="Picture of Suvan Agarwal playing his guitar, with white background" width="90%"></a>
-        <figcaption>Photo by Rosen-Jones Photography<br>1000x675 pixels</figcaption>
-      </figure>
-    </div>
-    <div class="grid-item">
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/holding-guitar-white-background.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/holding-guitar-white-background.jpg" alt="Picture of Suvan Agarwal holding his guitar, with white background" width="90%"></a>
-        <figcaption>Photo by Rosen-Jones Photography<br>3600x2400 pixels</figcaption>
-      </figure>
-    </div>
-    <div class="grid-item">
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/playing-guitar-warner-hall.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/playing-guitar-warner-hall.jpg" alt="Picture of Suvan Agarwal playing his guitar in Warner Hall" width="90%"></a>
-        <figcaption>2500x1875 pixels</figcaption>
-      </figure>
-    </div>
-    <div class="grid-item">
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/fairchild_far.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/fairchild_far.jpg" alt="Picture of Suvan Agarwal playing his guitar in the Oberlin Bach Competition Winners Concert in Fairchild Chapel" width="90%"></a>
-        <figcaption>3600x2400 pixels</figcaption>
-      </figure>
-    </div>
-    <div class="grid-item">
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/fairchild_mid.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/fairchild_mid.jpg" alt="Picture of Suvan Agarwal playing his guitar in the Oberlin Bach Competition Winners Concert in Fairchild Chapel" width="90%"></a>
-        <figcaption>3600x2400 pixels</figcaption>
-      </figure>
-    </div>
-    <div class="grid-item">
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/fairchild_close.jpg" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/fairchild_close.jpg" alt="Picture of Suvan Agarwal playing his guitar in the Oberlin Bach Competition Winners Concert in Fairchild Chapel" width="90%"></a>
-        <figcaption>3600x2400 pixels</figcaption>
-      </figure>
-    </div>
-    <div class="grid-item">
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/5thyearrecitalposter.png" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/5thyearrecitalposter.png" width="90%"></a>
-        <figcaption>1728x2304 pixels</figcaption>
-      </figure>
-    </div>
-    <div class="grid-item">
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/upcoming-concerts-march2024.png" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/upcoming-concerts-march2024.png" width="90%"></a>
-        <figcaption>3600x2400 pixels</figcaption>
-      </figure>
-    </div>
-    <div class="grid-item">
-      <figure>
-        <a href="https://suvanagarwalguitar.github.io/pre-gfa-poster.png" target="_blank"><img loading="lazy" src="https://suvanagarwalguitar.github.io/pre-gfa-poster.png" width="90%"></a>
-        <figcaption>3600x2400 pixels</figcaption>
-      </figure>
-    </div>
-  </div>
-  </div>
-  
-  <hr>
-  
-  <!-- Profile page content -->
-  <div id="profile">
-    <h1>Profile</h1>
-    <p><b>Name:</b> Suvan Agarwal (pronounced soo-vahn ah-gar-wal)</p>
-    <p><b>Age:</b> born in 2001</p>
-    <p><b>Hometown:</b> Sunnyvale, California</p>
-    <p><b>Languages:</b> English, Japanese</p>
-    <br>
-    <p><b>Education:</b></p>
-    <ul>
-      <li>*incoming* Royal Conservatoire of Scotland, Mmus in Guitar, expected 2026</li>
-      <li>Oberlin Conservatory, BM in Guitar, 2024</li>
-      <li>Oberlin College, BA in Physics, 2024</li>
-      <li>Homestead High School, 2019</li>
-    </ul>
-    <br>
-    <div id="awards">
-      <p><b>Awards and Scholarships:</b></p>
-      <ul>
-        <li>2024 Appalachian State University Guitar Festival Competition, 2nd prize</li>
-        <li>2024 Oberlin Conservatory Bach Competition (open to all string instruments), Winner</li>
-        <li>2024 Columbus Guitar Symposium Collegiate Competition, 2nd prize</li>
-        <li>2023 Louisville Collegiate Guitar Competition, 3rd prize</li>
-        <li>2023, Associated Board of the Royal Schools of Music (ABRSM) post-graduate scholarship to study at the Royal Conservatoire of Scotland</li>
-        <li>2023, Friends of University of Tokyo, Inc. (FUTI) scholarship to participate in the University of Tokyo Research Internship Program (UTRIP) at the UTokyo Earthquake Research Institute (ERI)</li>
-        <li>2022 John M. Ream Jr. DDS People’s Choice Award, awarded to the audience choice at the final round of the Tuesday Musical All-Ohio Scholarship Competition, open to all instruments.</li>
-        <li>2022 Margaret Watts Hunter Scholarship for Classical Guitar, awarded to the winner of the Tuesday Musical All-Ohio Scholarship Competition, guitar division</li>
-        <li>2022, The Bridging Scholarship awarded by the United States-Japan Bridging Foundation for study abroad at Waseda University</li>
-        <li>2022 USA National Science Foundation scholarship to conduct geophysics research at the Hawaii Geophysics Institute at the University of Hawaii at Manoa</li>
-        <li>2018 Guitar Foundation of America International Youth Ensemble Competition, 1st prize</li>
-      </ul>
-    </div>
-    <br>
-    <p><b>Comprehensive Repertoire List:</b><br><i>Asterisk* indicates a current work in progress as of May 7 2024. All other listed works have been performed in public.</i></p>
-    <ul>
-      <li>J.S. Bach
-        <ul>
-          <li>BWV 1004 D minor violin partita (all movements, arr Suvan Agarwal)</li>
-          <li>BWV 998 E flat major lute suite (all movements)</li>
-          <li>BWV 1006 E major lute suite (all movements)</li>
-          <li>BWV 645 Wachet auf, ruft uns die stimme (arr David Russell)</li>
-          <li>BWV 973 Concerto transcription after Vivaldi (all movements, arr Suvan Agarwal)</li>
-          <li>BWV 964 D minor keyboard sonata (arr Suvan Agarwal)
-            <ul>
-              <li>Andante</li>
-            </ul>
-          </li>
-          <li>BWV 1005 C major violin sonata (arr Suvan Agarwal)
-            <ul>
-              <li>Largo</li>
-            </ul>
-          </li>
-          <li>BWV 825 B flat major keyboard partita (arr Tilman Hoppstock)
-            <ul>
-              <li>Gigue</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>Domenico Scarlatti
-        <ul>
-          <li>Sonata K.27 (arr Eliot Fisk)</li>
-          <li>Sonata K.209 (arr Manuel Barrueco)</li>
-        </ul>
-      </li>
-      <li>Franz Schubert
-        <ul>
-          <li>Sonata for Arpeggione and Piano in A minor (all movements, arpeggione part arranged for guitar by Suvan Agarwal)</li>
-        </ul>
-      </li>
-      <li>Robert Schumann
-        <ul>
-          <li>Kinderszenen (all movements, arr Suvan Agarwal)</li>
-        </ul>
-      </li>
-      <li>Joaquin Rodrigo
-        <ul>
-          <li>Concierto de Aranjuez (all movements)</li>
-        </ul>
-      </li>
-      <li>Felix Mendelssohn
-        <ul>
-          <li>Song without words Op 30 No 1 (arr Stephen Aron)*</li>
-        </ul>
-      </li>
-      <li>Lennox Berkeley
-        <ul>
-          <li>Sonatina for Guitar (first movement)*</li>
-        </ul>
-      </li>
-      <li>Agustin Barrios
-        <ul>
-          <li>Sueno en la Floresta</li>
-          <li>Mazurka Appasionata</li>
-          <li>La Catedral</li>
-        </ul>
-      </li>
-      <li>Anton Diabelli
-        <ul>
-          <li>Sonata in A minor (Bream edit, all movements)</li>
-        </ul>
-      </li>
-      <li>Giulio Regondi
-        <ul>
-          <li>Ten Etudes
-            <ul>
-              <li>Etude 1</li>
-              <li>Etude 8</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>Toru Takemitsu
-        <ul>
-          <li>In The Woods
-            <ul>
-              <li>Wainscot Pond</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>Manuel Ponce
-        <ul>
-          <li>Sonata Romantica (all movements)</li>
-          <li>Prelude and Ballet</li>
-        </ul>
-      </li>
-      <li>Leo Brouwer
-        <ul>
-          <li>Sonata 1 (all movements)</li>
-        </ul>
-      </li>
-      <li>Mauro Giuliani
-        <ul>
-          <li>Grand Overture Op. 61</li>
-        </ul>
-      </li>
-    </ul>
-    <br>
-    <p><b>Additional Experience:</b></p>
-    <ul>
-      <li>Mar 2020-present, Oberlin College Computer and Information Technology Department, Help Desk Technician</li>
-      <li>Jun 2023-Aug 2023, University of Tokyo Earthquake Research Institute, Shingo Watada Lab, Research Intern</li>
-      <li>May 2022-Jul 2022, Hawaii Institute of Geophysics and Planetology at University of Hawaii at Manoa, Shiv Sharma Lab, Research Intern</li>
-      <li>Jan 2021-Jul 2021, Oberlin College Department of Physics, Stephen Fitzgerald Lab, Research Assistant</li>
-      <li>Apr 2015-Jul 2019, Fairbrae Manta Rays Swim Team, Assistant Swim Coach</li>
-    </ul>
-  </div>
-</main>
-
+  </main>
 </body>
-</html> 
+</html>
