@@ -1,0 +1,66 @@
+.content {
+  max-width: 960px;
+  margin: auto;
+}
+
+.nav {
+  background-color: maroon;
+  border: 12px solid lightgrey;
+}
+
+.nav h1 {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  margin: 0;
+    }
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background-color: white;
+  color: black;
+}
+
+.main {
+    display: flex;
+    padding: 12px;
+}
+
+.main-item   {
+    flex: 1;
+    padding: 12px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.grid-item {
+  text-align: center;
+}
+
+
+@media screen and (max-width: 600px) {
+  .nav li {float: none;}
+}
